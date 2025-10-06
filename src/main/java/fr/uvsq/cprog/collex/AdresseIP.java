@@ -11,6 +11,16 @@ public class AdresseIP implements Comparable<AdresseIP> {
         if (!IP_PATTERN.matcher(ipAddress).matches()) {
             throw new IllegalArgumentException("Format d'adresse IP invalide : " + ipAddress);
         }
+
+        // Vérifie que chaque octet est entre 0 et 255
+        String[] parts = ipAddress.split("\\.");
+        for (String part : parts) {
+            int value = Integer.parseInt(part);
+            if (value < 0 || value > 255) {
+                throw new IllegalArgumentException("Valeur d'octet invalide : " + part);
+            }
+        }
+
         this.ipAddress = ipAddress;
     }
 

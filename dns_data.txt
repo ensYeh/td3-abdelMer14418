@@ -1,3 +1,4 @@
 ecampus.uvsq.fr 193.51.25.12
 poste.uvsq.fr 193.51.31.154
 www.uvsq.fr 193.51.31.90
+localhost 127.0.0.1
